@@ -320,7 +320,7 @@ const Index = () => {
         </Card>
       </div>
 
-       <div className="mt-12 max-w-3xl mx-auto text-center">
+      <div className="mt-12 max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">
           <span className="emoji">✅</span> Singkatnya Soal Parameter itu adalaha : 
           <span className="emoji">🚀</span>
@@ -330,7 +330,6 @@ const Index = () => {
           <span className="emoji">💡</span>
         </p>
       </div>
-    </div>
 
       <div className="mt-12 max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">
