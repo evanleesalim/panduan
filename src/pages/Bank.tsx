@@ -42,11 +42,11 @@ const Bank = () => {
       account: "085643434382",
     },
     {
-      name: "Paypal Rif'an Muazin",
-      account: "boss@bosspulsa.com",
+      name: "Paypal Rifan Muazin",
+      account: "muazin.asro@gmail.com",
     },
     {
-      name: "BCA Rif'an Muazin",
+      name: "BCA Rifan Muazin",
       account: "0981-644-564",
     },
   ];
