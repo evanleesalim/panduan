@@ -1,7 +1,258 @@
 
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+interface Product {
+  name: string;
+  image: string;
+  price: number;
+  url: string;
+  description: string;
+}
 
 const About = () => {
+  const products: Product[] = [
+    {
+      name: "GeminiPress Personal",
+      image: "https://ebot.my.id/wp-content/uploads/2025/05/45a57f83-0d8c-4c07-afac-5cdb8baad048.png",
+      price: 310000,
+      url: "https://ebot.my.id/product/geminipress/",
+      description: "⚡ GeminiPress adalah plugin WordPress 2-in-1 yang menggabungkan Autoblog & Bulk Article Generator langsung dari dashboard WordPress Anda! 🧠 Didukung Semua Model Gemini Flash, Artikel yang dibuat sudah lengkap dengan Featured Image, Insert hingga 30 gambar, 1 video, dan TOC secara otomatis. 🚀"
+    },
+    {
+      name: "GeminiPress Reseller",
+      image: "https://ebot.my.id/wp-content/uploads/2025/05/45a57f83-0d8c-4c07-afac-5cdb8baad048.png",
+      price: 1200000,
+      url: "https://ebot.my.id/product/geminipress-lifetime/",
+      description: "⚡ GeminiPress adalah plugin WordPress 2-in-1 yang menggabungkan Autoblog & Bulk Article Generator langsung dari dashboard WordPress Anda! 🧠 🚀 Terdiri dari 2 Plugin yaitu GeminiPress yang berbasis Keyword / Judul untuk membuat Artikel dari Nol hanya modal Judul atau Keyword, atau GeminiPress Rewriter bermodalkan URL web lain untuk ditulis Ulang dalam bahasa yang sama dengan Gaya bahasa baru atau ke dalam Bahasa lain (Translate Rewrite)."
+    },
+    {
+      name: "OpenRouterPress",
+      image: "https://ebot.my.id/wp-content/uploads/2025/02/OpenRouterPress1.png",
+      price: 690000,
+      url: "https://ebot.my.id/product/openrouterpress/",
+      description: "OpenRouterPress - WP Plugin Autoblog Generator Bulk Post dengan Multi Models AI! 🚀 Buat artikel otomatis dengan 300+ Model AI, termasuk 30+ model gratis tanpa biaya!"
+    },
+    {
+      name: "PHP Encoder Sekali Bayar",
+      image: "https://ebot.my.id/wp-content/uploads/2025/02/PHP-Encoder-1.png",
+      price: 195000,
+      url: "https://ebot.my.id/product/encoder/",
+      description: "Lindungi Kode PHP Anda dengan Mudah, Sekali Bayar, Tanpa Ribet! Apakah Anda khawatir kode PHP Anda dicuri, dimodifikasi tanpa izin, atau disalin tanpa sepengetahuan Anda? Kini, dengan PHP Encoder Sekali Bayar, Anda bisa mengenkripsi file PHP dengan mudah dan aman tanpa perlu loader tambahan di server!"
+    },
+    {
+      name: "GPTPress",
+      image: "https://ebot.my.id/wp-content/uploads/2025/02/gpt-press.png",
+      price: 650000,
+      url: "https://ebot.my.id/product/gptpress/",
+      description: "Plugin WordPress berbasis GPT untuk membuat artikel massal berkualitas tinggi."
+    },
+    {
+      name: "Gemini AI Semi AutoBlog",
+      image: "https://ebot.my.id/wp-content/uploads/2025/01/Gemini-AI-Semi-Autoblog.png",
+      price: 150000,
+      url: "https://ebot.my.id/product/geminiai/",
+      description: "Tingkatkan produktivitas Anda dengan Gemini AI Semi AutoBlog, plugin cerdas untuk membuat artikel otomatis langsung di draft WordPress, siap Anda edit agar lebih sempurna!"
+    },
+    {
+      name: "DeepSeekPress",
+      image: "https://ebot.my.id/wp-content/uploads/2025/01/DeepSeekPress.png",
+      price: 599000,
+      url: "https://ebot.my.id/product/deepseekpress/",
+      description: "DeepSeekPress adalah plugin WordPress berbasis DeepSeek AI Premium untuk membuat artikel massal sesuai custom prompt."
+    },
+    {
+      name: "ClaudePress Sekali Bayar",
+      image: "https://ebot.my.id/wp-content/uploads/2025/01/ClaudePress.png",
+      price: 499900,
+      url: "https://ebot.my.id/product/claudepress/",
+      description: "ClaudePress adalah plugin WordPress berbasis Claude AI Premium untuk membuat artikel massal sesuai custom prompt."
+    },
+    {
+      name: "AIXPRESS Unlimited Domain",
+      image: "https://ebot.my.id/wp-content/uploads/2024/12/aixpress.png",
+      price: 200000,
+      url: "https://ebot.my.id/product/aixpress-unlimited/",
+      description: "Gunakan Kupon NANA, Diskon 101rb Semua AIXPRESS Unlimited. Sekali Bayar, Pakai Selamanya!"
+    },
+    {
+      name: "AIXPress Sekali Bayar",
+      image: "https://ebot.my.id/wp-content/uploads/2024/12/aixpress.png",
+      price: 1200000,
+      url: "https://ebot.my.id/product/aixpress/",
+      description: "Gunakan Kupon BABYNANA, Anda akan mendapatkan Diskon Spesial Rp.701.000, Jadi Hanya Membayar Rp.499rb"
+    },
+    {
+      name: "NEWS AI SAAS AUTOBLOG",
+      image: "https://ebot.my.id/wp-content/uploads/2024/10/news-ai.png",
+      price: 2000000,
+      url: "https://ebot.my.id/product/news-ai-saas-autoblog/",
+      description: "Tool untuk membuat blog berita otomatis dengan AI."
+    },
+    {
+      name: "GroqPress WP Plugin Reseller Right",
+      image: "https://ebot.my.id/wp-content/uploads/2024/09/GroqPress1.png",
+      price: 900000,
+      url: "https://ebot.my.id/product/groqpress-wp-plugin-reseller-right/",
+      description: "Mau Beli Lisensi Lifetime 1 Domain Saja? Bisa! Rp.50.000 Saja!"
+    },
+    {
+      name: "GroqPress WP Plugin",
+      image: "https://ebot.my.id/wp-content/uploads/2024/07/GroqPress.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/groqpress-plugin/",
+      description: "Plugin WordPress untuk membuat artikel otomatis dengan Groq AI."
+    },
+    {
+      name: "GroqPress SAAS",
+      image: "https://ebot.my.id/wp-content/uploads/2024/07/GroqPress.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/groqpress/",
+      description: "SAAS untuk membuat artikel otomatis dengan Groq AI."
+    },
+    {
+      name: "BelanjaSuite Malaysia",
+      image: "https://ebot.my.id/wp-content/uploads/2024/06/MyBelanjaSuite.png",
+      price: 250000,
+      url: "https://ebot.my.id/product/mybelanjasuite/",
+      description: "Tool untuk affiliate marketing di Malaysia."
+    },
+    {
+      name: "BardPress - AI AUTOBLOG",
+      image: "https://ebot.my.id/wp-content/uploads/2024/01/BardPress.png",
+      price: 350000,
+      url: "https://ebot.my.id/product/bardpress/",
+      description: "Perkenalkan BardPress: 2 in 1 Tool Artikel Otomatis Gemini AI yaitu BardPress SAAS dan BardPress WP Plugin."
+    },
+    {
+      name: "WallSuite",
+      image: "https://ebot.my.id/wp-content/uploads/2023/01/wallsuite-1.png",
+      price: 350000,
+      url: "https://ebot.my.id/product/wallsuite/",
+      description: "WallSuite is an Autoblog Tool For WallSpot, Wordpress and Static (HTML Sites)."
+    },
+    {
+      name: "ALIPIN",
+      image: "https://ebot.my.id/wp-content/uploads/2023/01/alipin-500x5001-1.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/alipin/",
+      description: "ALIPIN berguna untuk membuat Blog AliExpress dengan API Resmi AliExpress Khusus untuk Produk yang ada Videonya saja."
+    },
+    {
+      name: "DailySuite",
+      image: "https://ebot.my.id/wp-content/uploads/2023/01/DailySuite1.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/dailysuite/",
+      description: "DailySuite adalah Tool Autoblog WhiteHat API DailyMotion dengan 2 jalur monetize atau monetize Ganda."
+    },
+    {
+      name: "BookSuite",
+      image: "https://ebot.my.id/wp-content/uploads/2023/01/41747978_1116631568513029_4608497786894155776_n.jpg",
+      price: 200000,
+      url: "https://ebot.my.id/product/booksuite/",
+      description: "Tool untuk membuat blog buku otomatis."
+    },
+    {
+      name: "TubeSpot",
+      image: "https://ebot.my.id/wp-content/uploads/2023/01/TUBESPOT.png",
+      price: 200000,
+      url: "https://ebot.my.id/product/tubespot/",
+      description: "TubeSpot, Tool Autoblog Blogspot dan WP Untuk menjejali Blogspot dan WP Anda dengan Ratusan - Ribuan Artikel Niche Video Youtube."
+    },
+    {
+      name: "KarirSpot",
+      image: "https://ebot.my.id/wp-content/uploads/2023/01/KarirSpot.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/karirspot/",
+      description: "KarirSpot adalah Tool Autoblog 2 Sumber (Karir.com & CareerJet.com), 2 Platform (Blogspot & WP), 2 Metode Posting."
+    },
+    {
+      name: "WallSpot Plus",
+      image: "https://ebot.my.id/wp-content/uploads/2023/01/spiderman.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/wallspotplus/",
+      description: "WallSpot Plus: 1 Tool Autoblog Komplit dengan 7 Sumber Search Engine untuk menjejali Unlimited Blogspot & WP Anda dengan Unlimited Artikel Wallpaper."
+    },
+    {
+      name: "TMDBSpot Plus",
+      image: "https://ebot.my.id/wp-content/uploads/2022/12/tmdb.jpg",
+      price: 300000,
+      url: "https://ebot.my.id/product/tmdbspot/",
+      description: "Tool untuk membuat blog film otomatis dari TMDB."
+    },
+    {
+      name: "CreativeSpot",
+      image: "https://ebot.my.id/wp-content/uploads/2022/12/creativefabrica.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/creativespot/",
+      description: "Evan Faturrohman menghasilkan 400 USD/minggu dari Affiliate Creative Fabrica, Apakah Anda Ingin menghasilkan juga dari Creative Fabrica? Cara Mudahnya Mulainya Pakai CreativeSpot saja."
+    },
+    {
+      name: "Belanja Suite",
+      image: "https://ebot.my.id/wp-content/uploads/2022/12/BelanjaSuite1.png",
+      price: 299900,
+      url: "https://ebot.my.id/product/belanjasuite/",
+      description: "Tool Autoblog Blogspot dan WP Untuk Affiliate Shopee Multi Negara."
+    },
+    {
+      name: "WallSpot",
+      image: "https://ebot.my.id/wp-content/uploads/2022/12/default-1.png",
+      price: 200000,
+      url: "https://ebot.my.id/product/wallspot/",
+      description: "Cara Tercepat dan Termudah Menjejali Blogspot dan Wordpress Anda dengan Ribuan Artikel Wallpaper Unik tanpa Install, tanpa beli domain, tanpa bayar hosting dan tanpa repot."
+    },
+    {
+      name: "AliSuite",
+      image: "https://ebot.my.id/wp-content/uploads/2020/09/default-2.png",
+      price: 300000,
+      url: "https://ebot.my.id/product/alisuite/",
+      description: "Tool untuk affiliate marketing dengan AliExpress."
+    },
+    {
+      name: "FlickrSpot Plus",
+      image: "https://ebot.my.id/wp-content/uploads/2020/09/20150512091832_Manjakan_112_Juta_Penggunanya__Flickr_Hadirkan_Tiga_Fitur_Terbaru.jpg",
+      price: 10,
+      url: "https://ebot.my.id/product/flickrspot-plus/",
+      description: "FlickrSpot adalah Tool Autoblog yang berbentu Aplikasi Online / Saas yang bisa membuat Ratusan - Ribuan Artikel Wallpaper dengan sumber Flickr untuk Blogspot dan WP dengan 1 X Klik dan dalam hitungan detik saja."
+    },
+    {
+      name: "SPINPRESS",
+      image: "https://ebot.my.id/wp-content/uploads/2020/09/Simple-Drink-Water-Photo-Instagram-Post.png",
+      price: 200000,
+      url: "https://ebot.my.id/product/spinpress/",
+      description: "SPINPRESS adalah Plugin Wordpress yang berguna untuk membuat Ratusan – Ribuan Artikel Unik dengan bermodalkan 1 Template Artikel Spintaxt / Nested Spintaxt."
+    },
+    {
+      name: "TomtopSpot Plus",
+      image: "https://ebot.my.id/wp-content/uploads/2020/07/Tomtop.png",
+      price: 250000,
+      url: "https://ebot.my.id/product/tomtopspot-plus/",
+      description: "TomtopSpot adalah Tool Saas / Online yang dengan 1 X Klik membuat Ratusan Artikel Affiliate Produk – Produk Tomtop dalam beberapa detik saja."
+    },
+    {
+      name: "AzonSpot Lite Plus (1 Tahun)",
+      image: "https://ebot.my.id/wp-content/uploads/2020/07/AzonSpot.png",
+      price: 150000,
+      url: "https://ebot.my.id/product/azon/",
+      description: "Tool untuk affiliate marketing dengan Amazon (1 tahun)."
+    },
+    {
+      name: "AzonSpot Lite Plus 1 Bulan",
+      image: "https://ebot.my.id/wp-content/uploads/2020/07/AzonSpot.png",
+      price: 20000,
+      url: "https://ebot.my.id/product/azonspot-lite-plus/",
+      description: "Tool untuk affiliate marketing dengan Amazon (1 bulan)."
+    },
+  ];
+
+  const formatPrice = (price: number): string => {
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      maximumFractionDigits: 0,
+    }).format(price);
+  };
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
@@ -164,103 +415,35 @@ const About = () => {
           </Card>
 
           <Card className="p-6 rounded-xl shadow-md mt-8">
-            <h3 className="text-2xl font-semibold mb-6">Karya</h3>
-            <div className="grid grid-cols-1 gap-4">
-              {[
-                {
-                  name: "WallSpot",
-                  description:
-                    "Tool SAAS Autoblog Niche Wallpaper untuk Blogspot dan WP, di mana sekali Klik akan menghasilkan 1000 Artikel dalam 30 detik dalam bentuk XML",
-                },
-                {
-                  name: "WallSpot Plus",
-                  description:
-                    "Tool SAAS Autoblog Niche Wallpaper untuk Blogspot dan WP, di mana sekali Klik akan menghasilkan artikel sesuai keyword yang diberikan, lebih lambat dari pada WallSpot namun lebih bagus dari Sisi Keyword dan Judul karena tidak Random",
-                },
-                {
-                  name: "TubeSpot",
-                  description:
-                    "Tool SAAS Autoblog Niche Video Youtube untuk Blogspot dan WP, di mana sekali Klik akan menghasilkan 500 Artikel dalam 60 detik dalam bentuk XML",
-                },
-                {
-                  name: "TMDBSpot",
-                  description:
-                    "Tool SAAS Autoblog Niche Review FILM dari API TMDB.com untuk Blogspot dan WP, di mana sekali Klik akan menghasilkan 1000 Artikel dalam 30 detik dalam bentuk XML",
-                },
-                {
-                  name: "AliSuite",
-                  description:
-                    "Tool SAAS Autoblog AliExpress Affiliate untuk Blogspot dan WP, di mana sekali Klik akan menghasilkan 500 Artikel dalam 60 detik dalam bentuk XML",
-                },
-                {
-                  name: "BardPress",
-                  description:
-                    "WP Plugin AutoBlog AI sistem Bulk Post memakai API AI Gemini yang setiap artikel bisa dipasang 30 Gambar dan 1 Video, sudah Auto SEO dan Auto Feature Images / Thumbnail",
-                },
-                {
-                  name: "GPTPress",
-                  description:
-                    "WP Plugin AutoBlog AI sistem Bulk Post memakai API AI ChatGPT yang setiap artikel bisa dipasang 30 Gambar dan 1 Video, sudah Auto SEO dan Auto Feature Images / Thumbnail",
-                },
-                {
-                  name: "ClaudePress",
-                  description:
-                    "WP Plugin AutoBlog AI sistem Bulk Post memakai API AI Claude yang setiap artikel bisa dipasang 30 Gambar dan 1 Video, sudah Auto SEO dan Auto Feature Images / Thumbnail",
-                },
-                {
-                  name: "AIXPress",
-                  description:
-                    "WP Plugin AutoBlog AI sistem Bulk Post memakai API XAI / AI Twitter yang setiap artikel bisa dipasang 30 Gambar dan 1 Video, sudah Auto SEO dan Auto Feature Images / Thumbnail",
-                },
-                {
-                  name: "GroqPress",
-                  description:
-                    "WP Plugin AutoBlog AI sistem Bulk Post memakai API AI Groq.com Multi Models dengan AI Utama Meta AI / LLAMA yang setiap artikel bisa dipasang 30 Gambar dan 1 Video, sudah Auto SEO dan Auto Feature Images / Thumbnail",
-                },
-                {
-                  name: "OpenRouterPress",
-                  description:
-                    "WP Plugin AutoBlog AI sistem Bulk Post memakai API AI OpenRouter.AI yang setiap artikel bisa dipasang 30 Gambar dan 1 Video, sudah Auto SEO dan Auto Feature Images / Thumbnail",
-                },
-                {
-                  name: "BelanjaSuite",
-                  description:
-                    "All in One Tool, Autoblog di WP & Blogspot (SAAS), Auto Post Video di Telegram, dan SAAS RSS untuk IFTTT berisi Konten Affiliate Shopee Indonesia.",
-                },
-                {
-                  name: "PHP Encoder",
-                  description: "Tanpa Loader, sekali bayar untuk semua Project PHP Anda",
-                },
-                {
-                  name: "KarirSpot",
-                  description: "Autoblog Blogspot & WP untuk Bikin Situs Lowongan Kerja",
-                },
-                {
-                  name: "TomTopSpot",
-                  description:
-                    "SAAS Autoblog Affiliate TomTop.com untuk Blogspot & WP dalam bentuk Generator XML yang nantinya di-Import mirip WallSpot dll",
-                },
-                {
-                  name: "BookSuite",
-                  description: "Autoblog untuk GoogleBook di Blogspot & WP (XML)",
-                },
-                {
-                  name: "AzonSpot",
-                  description: "untuk Amazon",
-                },
-                {
-                  name: "SPINPRESS",
-                  description: "Bikin Artikel Massal modal Spintaxt",
-                },
-                {
-                  name: "FlickerSpot",
-                  description: "Autoblog WP & Blogspot dengan data dari Flickr API",
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
-                  <h4 className="font-semibold text-blue-600">{index + 1}. {item.name}</h4>
-                  <p className="text-gray-600 mt-1">{item.description}</p>
-                </div>
+            <h3 className="text-2xl font-semibold mb-6">Produk Saya</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              {products.map((product, index) => (
+                <Card key={index} className="overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                  <div className="relative aspect-video">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-lg mb-1 text-blue-700">{product.name}</h4>
+                    <p className="text-green-600 font-semibold mb-2">{formatPrice(product.price)}</p>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-3">
+                      {product.description}
+                    </p>
+                    <a 
+                      href={product.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="w-full">
+                        Lihat Detail
+                      </Button>
+                    </a>
+                  </div>
+                </Card>
               ))}
             </div>
           </Card>
