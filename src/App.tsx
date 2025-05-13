@@ -10,6 +10,7 @@ import Bank from "./pages/Bank";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import TagsTemplate from "./pages/TagsTemplate";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/bank" element={<Bank />} />
+              <Route path="/tags" element={<TagsTemplate />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

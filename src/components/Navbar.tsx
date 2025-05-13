@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { Tags } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -10,6 +11,9 @@ const Navbar = () => {
           <div className="flex space-x-6">
             <Link to="/" className="hover:text-blue-600 transition-colors">
               🏠 Panduan
+            </Link>
+            <Link to="/tags" className="hover:text-blue-600 transition-colors flex items-center gap-1">
+              <Tags className="w-4 h-4" /> Tag Template
             </Link>
             <Link to="/about" className="hover:text-blue-600 transition-colors">
               👨‍💻 Tentang Saya
