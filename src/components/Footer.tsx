@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
             <h3 className="text-xl font-bold">Panduan API AI</h3>
-            <p className="mt-2">© 2025 Evan Lee Salim / Rifan Muazin / eBot.my.id. All rights reserved.</p>
+            <p className="mt-2">© 2025 Rifan Muazin. All rights reserved.</p>
           </div>
           <div className="mt-4 md:mt-0">
             <div className="flex space-x-4">
