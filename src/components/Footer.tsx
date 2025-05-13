@@ -12,7 +12,9 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a href="https://facebook.com/rifanmuazin" className="hover:text-blue-400 transition-colors">Facebook</a>
               <a href="https://ebot.my.id" className="hover:text-blue-400 transition-colors">eBot.my.id</a>
-              <a href="mailto:boss@bosspulsa.com" className="hover:text-blue-400 transition-colors">Email</a>
+              <a href="mailto:muazin.asro@gmail.com" className="hover:text-blue-400 transition-colors">Email</a>
+              <a href="https://wa.me/6285643434382" className="hover:text-blue-400 transition-colors">Chat WA</a>
+              <a href="https://t.me/ibnuasro" className="hover:text-blue-400 transition-colors">Chat Telegram</a>
             </div>
           </div>
         </div>
