@@ -320,6 +320,18 @@ const Index = () => {
         </Card>
       </div>
 
+       <div className="mt-12 max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          <span className="emoji">✅</span> Singkatnya Soal Parameter itu adalaha : 
+          <span className="emoji">🚀</span>
+        </h2>
+        <p className="text-lg text-gray-600 mb-8">
+          <span className="emoji">💡</span> Semakin tinggi nilai maka semakin panjang artikel, semakin santai artikel, semakin kreatif AI, meski resikonya bisa ngaco / ngarang bebas serta kurang hati - hati alias Santai / Santui
+          <span className="emoji">💡</span>
+        </p>
+      </div>
+    </div>
+
       <div className="mt-12 max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">
           <span className="emoji">🚀</span> Mulai Gunakan API AI Sekarang!
