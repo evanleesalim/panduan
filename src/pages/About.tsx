@@ -48,7 +48,7 @@ const About = () => {
                     rel="noopener noreferrer"
                     className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm hover:bg-blue-200 transition-colors"
                   >
-                    Facebook Personal
+                    FB - Evan Lee Salim
                   </a>
                   <a
                     href="https://facebook.com/sundoluhur"
@@ -56,7 +56,7 @@ const About = () => {
                     rel="noopener noreferrer"
                     className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm hover:bg-blue-200 transition-colors"
                   >
-                    Facebook Sundoluhur
+                    FB - Rifan Muazin
                   </a>
                   <a
                     href="https://ebot.my.id"
