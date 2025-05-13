@@ -155,7 +155,7 @@ const TagsTemplate = () => {
             <div className="bg-white p-4 rounded-lg border border-blue-100">
               <h3 className="text-xl font-semibold text-blue-700">SPINTAX</h3>
               <p>
-                🔄 SPINTAX ditulis dengan menggunakan sintaks {}. 📝
+                🔄 SPINTAX ditulis dengan menggunakan sintaks {"{}"}. 📝
               </p>
               <p>
                 🎯 Misalnya, {"{SPIN|TAX}"} akan menghasilkan variasi dengan kata "SPIN" dan "TAX". 🎲
@@ -177,7 +177,7 @@ const TagsTemplate = () => {
                 🎪 Misalnya, {"{{nes|ted}|{spin|tax}}"} akan menghasilkan kombinasi variasi dari kata-kata di dalamnya. 🎯
               </p>
               <div className="bg-gray-100 p-3 mt-2 rounded-md">
-                <code>Input: Saya {{"{sangat|amat}"} {"{suka|senang}"|gemar}} membaca.</code>
+                <code>Input: Saya {"{{"}{"{sangat|amat}"} {"{suka|senang}"|gemar}{"}}"} membaca.</code>
                 <div className="mt-2">
                   <span className="font-bold">Output:</span> Saya sangat suka membaca <strong>atau</strong> Saya amat suka membaca <strong>atau</strong> Saya sangat senang membaca <strong>atau</strong> Saya amat senang membaca <strong>atau</strong> Saya gemar membaca
                 </div>
